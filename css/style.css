@@ -1,0 +1,121 @@
+/* Declaracion de colores */
+#top-btn a:hover {
+  color: #6b125f;
+}
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+  color: #57d5da;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #f7a2dd;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#top-btn {
+  position: fixed;
+  bottom: 42px;
+  right: 24px;
+  z-index: 99;
+  font-size: 45px;
+}
+#top-btn a {
+  color: #2e2c3a;
+}
+
+body {
+  background-color: #f7a2dd;
+  margin-top: 2px;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+}
+
+.mainX {
+  background-color: #f7a2dd;
+  color: #2e2c3a;
+  margin-bottom: 24px;
+}
+
+#story, #catalog {
+  margin: 24px 50px;
+}
+
+.card-body a {
+  color: #57d5da;
+}
+
+.galeria {
+  margin-top: 24px;
+}
+.galeria img {
+  max-height: 100%;
+  width: 75%;
+  margin-top: 5px;
+}
+
+.mail, iframe {
+  margin-top: 15px;
+  padding: 20px 50px;
+}
+
+.btn-rosa {
+  background-color: #f7a2dd;
+  border: dashed;
+  color: #6b125f;
+}
+
+.btn-aqua {
+  background-color: #57d5da;
+  color: #6b125f;
+}
+
+iframe {
+  margin-top: 15px;
+  max-width: 78%;
+  max-height: 86%;
+}
+
+.footerBg {
+  background-color: #57d5da;
+  color: #6b125f;
+  border: solid;
+}
+.footerBg a, .footerBg p {
+  display: block;
+  color: #2e2c3a;
+}
+
+.sitemap ul {
+  list-style: none;
+  padding: 0;
+}
+.sitemap ul li {
+  line-height: 0.6;
+}
+
+svg {
+  font-size: 42px;
+  margin: 30px;
+}
+
+.navbar-dark .navbar-brand {
+  color: #f7a2dd;
+  font-family: "Rubik", sans-serif;
+  font-family: "Rubik Burned", cursive;
+  font-weight: 400;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #57d5da;
+}
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show > .nav-link {
+  color: #f7a2dd;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+
+//
+.navbar-dark .navbar-brand {
+  color: map-get($paleta,'rosa');
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik Burned', cursive;
+  font-weight: 400;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: map-get($paleta,'aqua');
+}
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show > .nav-link {
+  color: map-get($paleta,'rosa');
+  font-weight: bold; 
+}
+
+

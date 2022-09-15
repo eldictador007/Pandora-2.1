@@ -1,0 +1,14 @@
+
+//
+/* Declaracion de colores */
+$paleta: (
+    'aqua': #57d5da,
+    'rosa': #f7a2dd,
+    'lila': #6b125f,
+    'gris': #2e2c3a,
+);
+@mixin media($mh,$w,$mt){
+    max-height: $mh;
+    width: $w;
+    margin-top: $mt;
+}

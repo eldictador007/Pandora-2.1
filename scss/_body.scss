@@ -1,0 +1,79 @@
+
+//
+*{padding: 0;margin: 0;}
+#top-btn {
+  position: fixed;
+  bottom: 42px;
+  right: 24px;
+  z-index: 99;
+  font-size: 45px;
+  a {
+    color: map-get($paleta , 'gris' );
+  }
+}  
+body { 
+  background-color: map-get($paleta, 'rosa' );
+  margin-top: 2px;
+  text-align: center;
+  font-family: 'Rubik', sans-serif; 
+}
+.mainX {
+  background-color: map-get($paleta, 'rosa' );
+  color: map-get($paleta , 'gris' );     
+  margin-bottom: 24px; 
+}
+#story, #catalog{
+  margin: 24px 50px;
+}
+.card-body a {
+  color: map-get($paleta, 'aqua' );
+
+}
+.galeria {
+  margin-top: 24px;
+   img {
+    @include media(100%,75%,5px) ;
+}
+}
+.mail {
+  margin-top: 15px;
+  padding: 20px 50px;
+}
+.btn-rosa {
+  background-color: map-get($paleta, 'rosa' );
+  border: dashed;
+  color: map-get($paleta, 'lila' );
+}
+.btn-aqua {
+  background-color: map-get($paleta, 'aqua' );
+  color: map-get($paleta, 'lila' );
+}
+iframe {
+  @extend .mail;
+  margin-top: 15px;
+  max-width: 78%;
+  max-height: 86%;
+}
+.footerBg{
+  background-color: map-get($paleta,'aqua');
+  color: map-get($paleta, 'lila' );
+  border: solid;
+  a, p {
+    display: block;
+    color: map-get($paleta , 'gris' );
+  }
+}
+.sitemap {
+      ul {
+      list-style: none;
+      padding: 0;
+      li {    
+        line-height: .6;
+      }
+    } 
+}
+svg {
+   font-size: 42px;
+   margin: 30px;
+ }
+

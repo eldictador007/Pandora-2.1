@@ -1,0 +1,11 @@
+
+//
+#top-btn a:hover {    
+  color: map-get( $paleta, 'lila' );
+}
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+  color: map-get( $paleta, 'aqua' );
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: map-get( $paleta, 'rosa' );
+}
