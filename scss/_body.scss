@@ -11,16 +11,58 @@
     color: map-get($paleta , 'gris' );
   }
 }  
-body { 
+.bodyA { 
   background-color: map-get($paleta, 'rosa' );
   margin-top: 2px;
   text-align: center;
   font-family: 'Rubik', sans-serif; 
 }
+.bodyR { 
+
+ @extend .bodyA;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+       "header header header"
+       "main main sidebar"
+       "main main sidebar"
+       "footer footer footer";
+    grid-gap: 1.25rem;
+}
+header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.poster {
+  height: 100%;
+  max-width: 100%;
+  padding: 25px 15px auto 15px;
+  
+  background: url(../pic/pic14.JPG);
+  background-position: center;
+  background-size: 400%;
+  
+  
+  
+  p {
+    padding: 25px 15px 25px 15px;
+    color: map-get($paleta, 'aqua' );
+    text-align: center;
+    font-size: x-large;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+}
+
 h1 {
   margin-top: 15px;
 }
 .mainX {
+  grid-area: main;
   background-color: map-get($paleta, 'rosa' );
   color: map-get($paleta , 'gris' );     
   margin-bottom: 24px; 
@@ -56,12 +98,12 @@ h1 {
   background-color: map-get($paleta, 'aqua' );
 }
 iframe {
-  @extend .mail;
-  margin-top: 15px;
+  margin-top: 35px;
   max-width: 78%;
   max-height: 86%;
 }
 .footerBg{
+  grid-area: footer;
   margin: 0;
   background-color: map-get($paleta,'aqua');
   color: map-get($paleta, 'lila' );
