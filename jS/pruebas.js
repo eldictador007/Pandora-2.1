@@ -44,3 +44,5 @@ if(total != 0){
 else{
     alert("Gracias por su visita!")
 }
+
+document.write(total)
