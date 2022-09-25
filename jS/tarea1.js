@@ -1,10 +1,10 @@
 //
 
 function cantidad(){
-    return parseInt(prompt(" Digitar la cantidad que desea comprar:"))
+    return parseInt(prompt(" Digitar la cantidad que deseas comprar:"))
 }
 function compra(){
-    return prompt(" Ingresar una opcion:\n - Paseo\n - Alojamiento\n - Helicoptero\n Escribe 'ESC' para salir")
+    return prompt(" Ingresar una opcion:\n\n - Paseo (u$s "+precioPaseo+" por persona)\n - Alojamiento (u$s "+precioAloja+" por noche en base simple)\n - Helicoptero (u$s "+precioHeli+" por persona)\n\n Escribe 'ESC' para salir")
 }
 function error(){
     alert(" '" +opcion+ "' " + "no es una opcion valida, intentalo nuevamente.")
@@ -12,35 +12,29 @@ function error(){
 let total=0
 
 const precioPaseo=4
-const precioAlojamiento=6
+const precioAloja=6
 const precioHeli=8
 
 let opcion=compra()
-while(opcion.toUpperCase()!="ESC"){
+while(opcion.toUpperCase() !="ESC"&&opcion.toUpperCase() !=""){
     if(opcion.toUpperCase()=="PASEO"){
-        alert(" El precio por persona es "+precioPaseo)
         total+=(precioPaseo*cantidad())
     }
     else if(opcion.toUpperCase()=="ALOJAMIENTO"){
-        alert(" El precio por noche es "+precioAlojamiento)
-        total+=(precioAlojamiento*cantidad())
-
+        total+=(precioAloja*cantidad())
     }
     else if(opcion.toUpperCase()=="HELICOPTERO"){
-        alert(" El precio por persona es "+precioHeli)
         total=total+(precioHeli*cantidad())
-
     }
     else{
         error()        
     }
-    opcion =compra()
-    
+    opcion =compra()    
 }
 
 if(total != 0){
-    alert("El precio total es: " + total)
+    alert("\n El precio total es: u$s " + total+"\n\n En minutos recibiras un correo confirmando tu compra.\n Gracias por tu confianza!")
 }
 else{
-    alert("Gracias por su visita!")
+    alert("\n Gracias por tu visita, vuelve pronto!")
 }
