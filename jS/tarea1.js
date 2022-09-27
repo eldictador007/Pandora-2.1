@@ -16,7 +16,7 @@ const precioAloja=6
 const precioHeli=8
 
 let opcion=compra()
-while(opcion.toUpperCase() !="ESC"&&opcion.toUpperCase() !=""){
+while(opcion.toUpperCase() !="ESC"&&opcion !=""){
     if(opcion.toUpperCase()=="PASEO"){
         total+=(precioPaseo*cantidad())
     }
@@ -24,7 +24,7 @@ while(opcion.toUpperCase() !="ESC"&&opcion.toUpperCase() !=""){
         total+=(precioAloja*cantidad())
     }
     else if(opcion.toUpperCase()=="HELICOPTERO"){
-        total=total+(precioHeli*cantidad())
+        total+=(precioHeli*cantidad())
     }
     else{
         error()        
@@ -32,7 +32,7 @@ while(opcion.toUpperCase() !="ESC"&&opcion.toUpperCase() !=""){
     opcion =compra()    
 }
 
-if(total != 0){
+if(total > 0){
     alert("\n El precio total es: u$s " + total+"\n\n En minutos recibiras un correo confirmando tu compra.\n Gracias por tu confianza!")
 }
 else{
