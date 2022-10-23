@@ -98,3 +98,5 @@ console.log(canasto)
 function mostrarCompra(){
     document.write('graciass capo\nmira tu compra\nhtml')
 }
+
+

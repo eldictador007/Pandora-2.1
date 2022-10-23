@@ -1,7 +1,10 @@
 //
 
 let welcome=true
+sessionStorage.clear() //  CUIDADO *-*-*-*-*-*-*  aH
 
+
+//  BASE
 function Objeto(id,nombre,precio,stock){
     this.id=id
     this.nombre=nombre
@@ -11,4 +14,43 @@ function Objeto(id,nombre,precio,stock){
 
 const obj1= new Objeto(1,"Uno",6,53)
 
-console.log(obj1)
+
+//  Ocultar
+
+function hideDom (id){
+    document.getElementById(id).style.display="none"
+}
+
+hideDom("contactoDiv")
+
+//  Mostrar o Toggle ^^^
+//
+
+let age= prompt(`fecha`)
+
+sessionStorage.setItem('inicio',age)
+
+console.log(Date())
+
+let time= new Date()
+//
+console.log(Date.now())
+console.log(time)
+console.log(Date.now())
+
+//
+
+Toastify({
+    text: "This is a toast",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "left", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
