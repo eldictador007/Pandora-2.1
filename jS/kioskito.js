@@ -23,7 +23,7 @@ let catalog= document.getElementById('items')
 let cartList= document.getElementById('cart')
 let btnEmpty= document.getElementById('btn-empty')
 let totalCart= document.getElementById('total')
-//let cart=[]
+let cart=[]
 
 btnEmpty.addEventListener('click',emptyCart)
 loadCart()
