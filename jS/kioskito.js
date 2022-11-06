@@ -56,9 +56,24 @@ kiosk.forEach((prod)=>{
 }
 )
 
-function addProdToCart(e){
-    cart.push(e.target.getAttribute('mark'))
-    renderCart()
+function addProdToCart(e){ 
+        
+    Swal.fire({
+        position:'top-end',
+        title: `Se agrego un producto a tu carrito!`,
+        icon: 'success',
+        timer:1400,
+        confirmButtonColor: '#757779',
+        confirmButtonText: 'Deshacer'
+      }).then((result) => {
+        if (result.isConfirmed) {            
+            renderCart()
+        }else if(result.dismiss){
+            cart.push(e.target.getAttribute('mark'))
+            renderCart()
+        }
+      })
+   
 }
 function renderCart(){
     cartList.innerHTML=''
@@ -73,7 +88,7 @@ function renderCart(){
         },0)    
     let line= document.createElement('li')
     line.classList.add('list-group-item','text-center','mx-2')
-    line.innerText= `${quantity}x ${item[0].name} = $${item[0].price} c/u  `
+    line.innerText= ` ${item[0].name} \n ${quantity}x $${item[0].price} c/u  `
     let btnDelete= document.createElement('button')
     btnDelete.classList.add('btn','btn-rosa','px-1','my-2')
     btnDelete.innerText='Quitar'

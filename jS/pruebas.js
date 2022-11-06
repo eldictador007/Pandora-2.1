@@ -17,11 +17,11 @@ const obj1= new Objeto(1,"Uno",6,53)
 
 //  Ocultar
 
-function hideDom (id){
-    document.getElementById(id).style.display="none"
+function hideDom (){
+    document.getElementById('id').style.display="none"
 }
 
-hideDom("contactoDiv")
+// hideDom("contactoDiv")
 
 //  Mostrar o Toggle ^^^
 //
@@ -36,9 +36,7 @@ let time= new Date()
 //
 console.log(Date.now())
 console.log(time)
-console.log(Date.now())
 
-//
 
 Toastify({
     text: "This is a toast",
