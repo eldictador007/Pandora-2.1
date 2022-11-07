@@ -22,6 +22,7 @@
   right: 24px;
   z-index: 99;
   font-size: 45px;
+  
 }
 #top-btn a {
   color: #2e2c3a;
@@ -169,6 +170,8 @@ svg {
   }
 }
 
+/*  Agregados para cuso jS sin Sass  */
+
 .anexo{
   grid-area: anexo;
   display: flex;
@@ -235,9 +238,23 @@ input.buscar {
   left: 50px;
 }
 
-svg:hover {
+svg:hover, div.darkmodeT:hover {
   transform: scale(1.25);
   transition: 0.3s;
+}
+
+/*  Icono darkMode */
+
+div.darkmodeT{
+  position: fixed;
+  bottom: 36px;
+  right: 20px;
+  z-index: 99;
+  cursor: pointer;
+  background: #57d5da;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .18),0 3px 6px rgba(0, 0, 0, .27) ;
 }
 
 
