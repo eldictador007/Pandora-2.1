@@ -15,6 +15,7 @@ let cuatri= new Product(6,"Cuatriciclo",35,8)
 let catalog= document.getElementById('items')
 let cartList= document.getElementById('cart')
 let btnEmpty= document.getElementById('btn-empty')
+let btnBuy= document.getElementById('btn-buy')
 let totalCart= document.getElementById('total')
 let cart=[]
 
@@ -22,6 +23,8 @@ const kiosk = [paseo,noche,heli,caballo,resto,cuatri]
 
 //
 btnEmpty.addEventListener('click',emptyCart)
+btnBuy.addEventListener('click',finalizarCompra)
+
 loadCart()
 
 kiosk.forEach((prod)=>{
@@ -58,13 +61,44 @@ function Product(id,name,price,stock){
     this.stock=stock
 }
 
+  
+function finalizarCompra(){
+    pagar=totalPrice()
+    
+    Swal.fire({
+        title: 'Finalizar compra?',
+        text: `Total: $${pagar}`,
+        color: '#57d5da',
+        icon: 'question',
+        iconColor: '#f7a2dd',
+        
+        showCancelButton: true,
+        confirmButtonColor: '#57d5da',
+        cancelButtonColor: '#f7a2dd',
+        cancelButtonText: 'Seguir comprando',
+        confirmButtonText: 'Pagar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+           title: 'Felicidades!',
+           text: 'Gracias por tu compra.',
+           color: '#f7a2dd',
+           icon: 'success',
+           iconColor: '#57d5da',
+           confirmButtonColor: '#57d5da'
+        })
+        }
+      })
+
+}
+
 function addProdToCart(e){ 
     
     Swal.fire({
         position:'top-end',
         title: `Se agrego un producto a tu carrito!`,
         icon: 'success',
-        timer:1400,
+        timer:1600,
         confirmButtonColor: '#757779',
         confirmButtonText: 'Deshacer'
     }).then((result) => {

@@ -1,5 +1,14 @@
 //
 
+document.querySelector("div.darkmodeT").addEventListener("click",function(){
+    if(document.querySelector(".darkreader")){
+        darkmodeToggle('off')
+    }
+    else(
+        darkmodeToggle('on')
+    )
+},false)
+
 function darkmodeToggle(cambio){
     if (cambio=='on'){
         DarkReader.enable()
@@ -13,15 +22,7 @@ function darkmodeToggle(cambio){
     }
 }
 
-document.querySelector("div.darkmodeT").addEventListener("click",function(){
-    if(document.querySelector(".darkreader")){
-        darkmodeToggle('off')
-    }
-    else(
-        darkmodeToggle('on')
-    )
-},false)
-
+// Codigo importado de https://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -43,5 +44,6 @@ function setCookie(cname, cvalue, exdays) {
     }
     return "";
   }
+// 
 
 darkmodeToggle(getCookie("darkmode"))

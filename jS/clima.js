@@ -26,7 +26,8 @@ let clima = {
 }
 let geocode={
     reverseGeocode: function(latitude,longitude){
-        
+
+// codigo importado de https://opencagedata.com/tutorials/geocode-in-javascript        
         var api_key = '5f76aa3f109b4201a55d6ac418de6ed9';
        
         var api_url = 'https://api.opencagedata.com/geocode/v1/json'
@@ -71,7 +72,7 @@ let geocode={
         };
 
         request.send();  // make the request
-
+//
     },
     getLocation: function(){
         function success(data) {

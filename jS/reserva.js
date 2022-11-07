@@ -1,4 +1,4 @@
-//
+// PLANTEO para proximo curso React
 const multiplica=(a,b) => a*b
 let cliente=[]
 let canasto=[]

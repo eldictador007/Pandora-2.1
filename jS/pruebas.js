@@ -1,4 +1,4 @@
-//
+//  ZONA DE PRUEBAS - CODIGO EXPERIMENTAL
 
 let welcome=true
 sessionStorage.clear() //  CUIDADO *-*-*-*-*-*-*  aH

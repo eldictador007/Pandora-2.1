@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../pic/wash-dry-p.svg">
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link href="https://css.gg/css?=|moon|sun" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/style.css">
  
     <title>Kioskito | Pandora</title>
@@ -73,7 +75,8 @@
                 <hr>
                 <!-- Precio total -->
                 <p class="text-right"><b>Total: </b><span id="total"></span></p>
-                <button id="btn-empty" class="btn-aqua btn"><i>Vaciar</i></button>
+                <button id="btn-buy" class="btn-aqua btn"><i>Comprar</i></button>
+                <button id="btn-empty" class="btn-rosa btn"><i>Vaciar</i></button>
             </aside>           
             <!-- Elementos generados a partir de JS -->
             <main id="items" class="col-md-6 row py-2 g-2">
@@ -81,6 +84,19 @@
             </main>
         </div>
     </div>
+
+    <div id="top-btn">
+      <a href="#top">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g transform="rotate(-90 12 12) translate(24 0) scale(-1 1)"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path fill="currentColor" fill-opacity="0" stroke-dasharray="60" stroke-dashoffset="60" d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.5s" values="60;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.15s" values="0;0.3"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M10 12L13 9M10 12L13 15"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="6;0"/></path></g></g>
+        </svg>
+      </a>
+      
+    </div>
+    <div class="darkmodeT">
+      <i class="gg-sun"></i>
+     
+    </div>
+
     <footer class="row footerBg p-4">
         <div class="sitemap col-lg-4 col-xs-12">
           <h4>- PANDORA -</h4>
@@ -132,7 +148,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.58/darkreader.min.js"></script>
     <script src='../jS/kioskito.js'></script>
+    <script src="../jS/darkMode.js"></script>
 
 </body>
 </html>
