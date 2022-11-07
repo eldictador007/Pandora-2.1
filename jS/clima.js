@@ -1,31 +1,8 @@
 
-let clima = {
-    apiKey: "7b0adcefb24db69dac13b43bde81045b",
-    fetchClima: function(city){
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric&lang=es`)
-        .then((response)=>response.json())
-        .then((data)=>this.mostrarClima(data))
-    },
-    mostrarClima: function(data){
-        const{name}=data
-        const{country}=data.sys
-        const{icon,description}=data.weather[0]
-        const{temp,humidity}=data.main
-        const{speed}=data.wind
-        document.querySelector(".ciudad").innerHTML=`<h4>Asi esta el clima en:<h/4><h3></br> ${name}, ${country}.</h3>`
-        document.querySelector(".icon").src= `https://openweathermap.org/img/wn/${icon}@2x.png`
-        document.querySelector(".descripcion").innerHTML=description
-        document.querySelector(".temp").innerHTML=`${temp.toFixed(1)}° C`
-        document.querySelector(".viento").innerHTML=`Viento: ${speed} km/h`
-        document.querySelector(".humedad").innerHTML=`Humedad: ${humidity}%`
-        document.querySelector(".clima").classList.remove("loading")
-    },
-    buscar:function(){
-        this.fetchClima(document.querySelector(".buscar").value)
-    }
-}
+
+
 let geocode={
-    reverseGeocode: function(latitude,longitude){
+    reverseGeocode(latitude,longitude){
 
 // codigo importado de https://opencagedata.com/tutorials/geocode-in-javascript        
         var api_key = '5f76aa3f109b4201a55d6ac418de6ed9';
@@ -74,7 +51,7 @@ let geocode={
         request.send();  // make the request
 //
     },
-    getLocation: function(){
+    getLocation(){
         function success(data) {
             geocode.reverseGeocode(data.coords.latitude,data.coords.longitude)            
             }
@@ -85,7 +62,37 @@ let geocode={
                     clima.fetchClima("cusco")
                 }
     }
+
 }
+
+geocode.getLocation()
+
+let clima = {
+    apiKey: "7b0adcefb24db69dac13b43bde81045b",
+    fetchClima(city){
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric&lang=es`)
+        .then((response)=>response.json())
+        .then((data)=>this.mostrarClima(data))
+    },
+    mostrarClima(data){
+        const{name}=data
+        const{country}=data.sys
+        const{icon,description}=data.weather[0]
+        const{temp,humidity}=data.main
+        const{speed}=data.wind
+        document.querySelector(".ciudad").innerHTML=`<h4>Asi esta el clima en:<h/4><h3></br> ${name}, ${country}.</h3>`
+        document.querySelector(".icon").src= `https://openweathermap.org/img/wn/${icon}@2x.png`
+        document.querySelector(".descripcion").innerHTML=description
+        document.querySelector(".temp").innerHTML=`${temp.toFixed(1)}° C`
+        document.querySelector(".viento").innerHTML=`Viento: ${speed} km/h`
+        document.querySelector(".humedad").innerHTML=`Humedad: ${humidity}%`
+        document.querySelector(".clima").classList.remove("loading")
+    },
+    buscar(){
+        this.fetchClima(document.querySelector(".buscar").value)
+    }
+}
+
 
 document.querySelector(".buscador button").addEventListener('click',function(){
     clima.buscar()
@@ -97,4 +104,3 @@ document.querySelector(".buscar").addEventListener('keyup', function(e){
 })
 
 
-geocode.getLocation()
