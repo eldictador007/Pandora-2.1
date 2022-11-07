@@ -1,8 +1,5 @@
 
 //
-
-const multiplica=(a,b) => a*b
-
 //
 let cliente=[]
 let total=0
@@ -15,16 +12,15 @@ let caballo= new Product(4,"Cabalgata",5,99)
 let resto= new Product(5,"Restaurante",2,99)
 let cuatri= new Product(6,"Cuatriciclo",35,8)
 
-const kiosk = [paseo,noche,heli,caballo,resto,cuatri]
-
-//
-
 let catalog= document.getElementById('items')
 let cartList= document.getElementById('cart')
 let btnEmpty= document.getElementById('btn-empty')
 let totalCart= document.getElementById('total')
 let cart=[]
 
+const kiosk = [paseo,noche,heli,caballo,resto,cuatri]
+
+//
 btnEmpty.addEventListener('click',emptyCart)
 loadCart()
 
@@ -55,9 +51,15 @@ kiosk.forEach((prod)=>{
     catalog.append(cardBody)    
 }
 )
+function Product(id,name,price,stock){
+    this.id=id
+    this.name=name
+    this.price=price 
+    this.stock=stock
+}
 
 function addProdToCart(e){ 
-        
+    
     Swal.fire({
         position:'top-end',
         title: `Se agrego un producto a tu carrito!`,
@@ -65,7 +67,7 @@ function addProdToCart(e){
         timer:1400,
         confirmButtonColor: '#757779',
         confirmButtonText: 'Deshacer'
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {            
             renderCart()
         }else if(result.dismiss){
@@ -109,12 +111,6 @@ function deleteProd(e){
 function emptyCart(){
     cart=[]
     renderCart()
-}
-function Product(id,name,price,stock){
-    this.id=id
-    this.name=name
-    this.price=price 
-    this.stock=stock
 }
 function totalPrice(){
     return cart.reduce((total,product)=>{
