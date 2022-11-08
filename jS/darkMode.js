@@ -1,26 +1,5 @@
 //
 
-document.querySelector("div.darkmodeT").addEventListener("click",function(){
-    if(document.querySelector(".darkreader")){
-        darkmodeToggle('off')
-    }
-    else(
-        darkmodeToggle('on')
-    )
-},false)
-
-function darkmodeToggle(cambio){
-    if (cambio=='on'){
-        DarkReader.enable()
-        document.querySelector("div.darkmodeT").firstElementChild.className="gg-moon"
-        setCookie("darkmode","on",99)
-    }
-    else{
-        DarkReader.disable()
-        document.querySelector("div.darkmodeT").firstElementChild.className="gg-sun"
-        setCookie("darkmode","off",99)
-    }
-}
 
 // Codigo importado de https://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
@@ -44,6 +23,30 @@ function setCookie(cname, cvalue, exdays) {
     }
     return "";
   }
-// 
+
+//
+
+function darkmodeToggle(cambio){
+  
+  if (cambio=='on'){
+      DarkReader.enable()
+      document.querySelector("div.darkmodeT").firstElementChild.className="gg-moon"
+      setCookie("darkmode","on",99)
+  }
+  else{
+      DarkReader.disable()
+      document.querySelector("div.darkmodeT").firstElementChild.className="gg-sun"
+      setCookie("darkmode","off",99)
+  }
+}
 
 darkmodeToggle(getCookie("darkmode"))
+
+document.querySelector("div.darkmodeT").addEventListener("click",function(){
+  if(document.querySelector(".darkreader")){
+      darkmodeToggle('off')
+  }
+  else(
+      darkmodeToggle('on')
+  )
+},false)
