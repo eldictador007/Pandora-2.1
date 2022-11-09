@@ -1,5 +1,6 @@
 
 //
+
 //
 let cliente=[]
 let total=0
@@ -25,7 +26,7 @@ const kiosk = [paseo,noche,heli,caballo,resto,cuatri]
 btnEmpty.addEventListener('click',emptyCart)
 btnBuy.addEventListener('click',finalizarCompra)
 
-loadCart()
+// loadCart()
 
 kiosk.forEach((prod)=>{
     //
@@ -51,7 +52,8 @@ kiosk.forEach((prod)=>{
     cardBtn.addEventListener('click', addProdToCart)
     //
     cardBody.append(cardTitle,cardStock,cardPrice,cardBtn)
-    catalog.append(cardBody)    
+    catalog.append(cardBody) 
+       
 }
 )
 function Product(id,name,price,stock){
@@ -62,12 +64,12 @@ function Product(id,name,price,stock){
 }
 
   
-function finalizarCompra(){
-    pagar=totalPrice()
-    
+function finalizarCompra(){  
+    if (cart.length!=0){
+     
     Swal.fire({
         title: 'Finalizar compra?',
-        text: `Total: $${pagar}`,
+        text: `Total: $${totalPrice()}`,
         color: '#57d5da',
         icon: 'question',
         iconColor: '#f7a2dd',
@@ -79,17 +81,34 @@ function finalizarCompra(){
         confirmButtonText: 'Pagar'
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire({
-           title: 'Felicidades!',
-           text: 'Gracias por tu compra.',
-           color: '#f7a2dd',
-           icon: 'success',
-           iconColor: '#57d5da',
-           confirmButtonColor: '#57d5da'
-        })
-        }
-      })
+            saveBuy()
+            cart=[]
+            renderCart()
+            Swal.fire({
+                title: 'Felicidades!',
+                text: 'Gracias por tu compra.',
+                color: '#f7a2dd',
+                icon: 'success',
+                iconColor: '#57d5da',
+                showConfirmButton: false,
+                timer:988,       
 
+            })
+        } else if (result.isDenied) {
+            renderCart()
+          }
+      })
+}
+}
+
+function saveBuy(){
+    
+    cliente.push({   
+        fecha:Date(),     
+        compra:cart,
+        pago:totalPrice()
+    })
+    localStorage.setItem('cliente',JSON.stringify(cliente))
 }
 
 function addProdToCart(e){ 
@@ -98,7 +117,7 @@ function addProdToCart(e){
         position:'top-end',
         title: `Se agrego un producto a tu carrito!`,
         icon: 'success',
-        timer:1600,
+        timer:1343,
         confirmButtonColor: '#757779',
         confirmButtonText: 'Deshacer'
     }).then((result) => {
@@ -110,6 +129,13 @@ function addProdToCart(e){
         }
       })
    
+}
+function deleteProd(e){
+    let id= e.target.dataset.item
+    cart= cart.filter((cartId)=>{
+        return cartId != id
+    })
+    renderCart()
 }
 function renderCart(){
     cartList.innerHTML=''
@@ -134,14 +160,9 @@ function renderCart(){
     cartList.append(line)
     })
     totalCart.innerText= ` $${totalPrice()}`
+    
 }
-function deleteProd(e){
-    let id= e.target.dataset.item
-    cart= cart.filter((cartId)=>{
-        return cartId != id
-    })
-    renderCart()
-}
+
 function emptyCart(){
     cart=[]
     renderCart()
@@ -158,8 +179,8 @@ function saveCart(){
     localStorage.setItem('cart',JSON.stringify(cart))
 }
 function loadCart(){
-    if(localStorage.getItem('cart') != null){
+    if(localStorage.getItem('cart')!=null){
         cart= JSON.parse(localStorage.getItem('cart'))
-    }
+    }   
     renderCart()
 }
